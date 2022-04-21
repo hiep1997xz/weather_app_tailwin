@@ -1,8 +1,8 @@
-import React from 'react'
+
 import moment from 'moment'
 
-const SummatyCard = ({day}) => {
-    let day_icon = `${process.env.REACT_API_ICON_URL + day.weather[0]["icon"]}@2x.png`
+function SummaryCard({day}) {
+    let day_icon = `${process.env.REACT_APP_ICON_URL + day.weather[0]["icon"]}@2x.png`
     return (
         <li className="container p-4 flex items-center justify-center bg-gray-200 rounded-lg my-auto mr-1">
             <div className="my-auto">
@@ -17,4 +17,4 @@ const SummatyCard = ({day}) => {
     )
 }
 
-export default SummatyCard
+export default SummaryCard
