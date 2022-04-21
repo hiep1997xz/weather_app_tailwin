@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import DetailCard from "./components/DetailCard";
+import Header from "./components/Header";
+import SummatyCard from "./components/SummatyCard";
 
 function App() {
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -10,6 +13,15 @@ function App() {
   const [weatherIcon, setWeatherIcon] = useState(
     `${process.env.REACT_API_ICON_URL}10n@2x.png`
   );
+
+  const myIP = (location) => {
+    console.log(location);
+  }
+  
+  const handleChange = () => {} 
+
+  const handleSubmit = () => {}
+
 
   return (
     <div className="bg-gray-800 flex items-center justify-center w-screen h-screen py-10">
@@ -69,14 +81,14 @@ function App() {
             ) : (
               <>
                 <h1 className="text-5xl text-gray-800 mt-auto mb-4">Today</h1>
-                <DetaiCard weather_icon={weatherIcon} data={weatherData} />
+                <DetailCard weather_icon={weatherIcon} data={weatherData} />
                 <h1 className="text-3xl text-gray-800 mt-auto mb-4">
                   More On {city}
                 </h1>
                 <ul className="gird grid-cols-2 gap-2">
                   {weatherData.list.map((days, index) => {
                     if (index > 0) {
-                      return <SummatyCard key={inex} day={days} />;
+                      return <SummatyCard key={index} day={days} />;
                     }
                   })}
                 </ul>
